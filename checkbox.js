@@ -1,3 +1,11 @@
+/**
+ * Funkce handleCheckboxEdit
+ * ------------------------
+ * Reaguje na změnu checkboxu ve sloupci C na listu "Úklidový plán".
+ * - Pokud je checkbox odškrtnutý a datum ve sloupci A je v minulosti, znovu jej zaškrtne a nic dalšího neprovede.
+ * - Pokud je checkbox zaškrtnutý, zapíše jméno z buňky F1 do sloupce B.
+ * - Pokud je checkbox odškrtnutý a datum není v minulosti, smaže jméno ze sloupce B.
+ */
 function handleCheckboxEdit(sheet, range, row) {
   const isChecked = range.getValue() === true; // Zjistí, zda je checkbox zaškrtnutý
   const assignedUserCell = sheet.getRange(row, 2); // Buňka ve sloupci B (jméno)
